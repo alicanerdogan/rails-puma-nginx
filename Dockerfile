@@ -83,4 +83,8 @@ COPY docker-entrypoint.sh $APP_ROOT
 WORKDIR $APP_ROOT
 RUN chmod u+x docker-entrypoint.sh
 
+# INSTALL CURTAIN REQUIREMENTS
+RUN apt-get update && \
+    apt-get install -y imagemagick nano
+    
 ENTRYPOINT ./docker-entrypoint.sh
